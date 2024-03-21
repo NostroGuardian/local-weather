@@ -1,0 +1,24 @@
+:root {
+  --black: #000;
+  --bodyBackground: #fdfdfd;
+}
+
+#root {
+  width: 1180px;
+  margin: 0 auto;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bodyBackground);
+}
+
+::selection {
+  background: antiquewhite;
+}

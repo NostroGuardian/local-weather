@@ -1,0 +1,22 @@
+.main-temp {
+  margin-top: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-temp__count {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+.main-temp__celsium {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.main-temp__description {
+  font-size: 1.25rem;
+  font-weight: 500;
+}

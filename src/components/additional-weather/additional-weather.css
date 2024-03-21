@@ -1,0 +1,22 @@
+.additional-weather {
+  margin-top: 76px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.additional-weather__element {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.additional-weather__icon {
+  margin-top: 4px;
+}
+
+.additional-weather__count {
+  font-size: 2.25rem;
+  font-weight: 500;
+}
