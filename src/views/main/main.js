@@ -62,7 +62,7 @@ export class MainView extends AbstractView {
     const main = document.createElement('div');
     main.append(new Header(this.state).render());
     main.append(new MainTemp(this.state).render());
-    main.append(new AdditionalWeather().render());
+    main.append(new AdditionalWeather(this.state).render());
     main.append(new Quote(this.state).render());
     this.app.innerHTML = '';
     this.app.append(main);

@@ -14,21 +14,27 @@ export class AdditionalWeather extends DivComponent {
             <div class="additional-weather__icon">
               <img src="../../static/images/humidity.png" alt="Humidity" />
             </div>
-            <div class="additional-weather__count">73%</div>
+            <div class="additional-weather__count">${
+              this.state.weatherData.main?.humidity
+            }%</div>
           </div>
 
           <div class="additional-weather__element">
             <div class="additional-weather__icon">
               <img src="../../static/images/wind.png" alt="Wind" />
             </div>
-            <div class="additional-weather__count">3м/c</div>
+            <div class="additional-weather__count">${
+              this.state.weatherData.wind?.speed
+            }м/c</div>
           </div>
 
           <div class="additional-weather__element">
             <div class="additional-weather__icon">
               <img src="../../static/images/visibility.png" alt="Visibility" />
             </div>
-            <div class="additional-weather__count">97%</div>
+            <div class="additional-weather__count">${
+              this.state.weatherData.visibility / 100
+            }%</div>
           </div>
         </div>
     `;
