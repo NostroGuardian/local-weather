@@ -2,8 +2,9 @@ import { DivComponent } from '../../common/div-component';
 import './header.css';
 
 export class Header extends DivComponent {
-  constructor() {
+  constructor(state) {
     super();
+    this.state = state;
   }
 
   render() {
@@ -13,7 +14,9 @@ export class Header extends DivComponent {
             <img src="../../static/images/logo.png" alt="Logo" />
             </div>
             <div class="header__location">
-            <img src="../../static/images/location.png" alt="Location" />Москва
+            <img src="../../static/images/location.png" alt="Location" />${
+              this.state.loading ? 'Загрузка...' : this.state.weatherData.name
+            }
             </div>
         </header>
     `;

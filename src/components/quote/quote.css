@@ -1,0 +1,17 @@
+.quote {
+  margin: 80px auto 0 auto;
+  width: 800px;
+  text-align: center;
+}
+
+.qoute__content {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 300;
+}
+
+.qoute__author {
+  margin-top: 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}

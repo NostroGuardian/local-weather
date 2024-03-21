@@ -2,15 +2,17 @@ import { DivComponent } from '../../common/div-component';
 import './main-temp.css';
 
 export class MainTemp extends DivComponent {
-  constructor() {
+  constructor(state) {
     super();
+    this.state = state;
   }
 
   render() {
+    console.log(this.state);
     this.el.innerHTML = `
         <div class="main-temp">
             <div class="main-temp__count">
-                13<sup class="main-temp__celsium">°C</sup>
+                ${this.state.weatherData.main}<sup class="main-temp__celsium">°C</sup>
             </div>
             <div class="main-temp__description">пасмурно</div>
         </div>
