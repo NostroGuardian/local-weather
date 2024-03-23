@@ -16,6 +16,8 @@ export class AdditionalWeather extends DivComponent {
             </div>
             <div class="additional-weather__count">${
               this.state.weatherData.main?.humidity
+                ? this.state.weatherData.main?.humidity
+                : '-'
             }%</div>
           </div>
 
@@ -25,6 +27,8 @@ export class AdditionalWeather extends DivComponent {
             </div>
             <div class="additional-weather__count">${
               this.state.weatherData.wind?.speed
+                ? this.state.weatherData.wind?.speed
+                : ''
             }м/c</div>
           </div>
 
@@ -34,6 +38,8 @@ export class AdditionalWeather extends DivComponent {
             </div>
             <div class="additional-weather__count">${
               this.state.weatherData.visibility / 100
+                ? this.state.weatherData.visibility / 100
+                : ''
             }%</div>
           </div>
         </div>

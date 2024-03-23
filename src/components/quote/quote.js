@@ -9,7 +9,14 @@ export class Quote extends DivComponent {
 
   render() {
     if (this.state.loading) {
-      this.el.innerHTML = `<h1 style="color: red;">LOADING</h1>`;
+      this.el.innerHTML = `
+      <div class="quote">
+            <div class="qoute__content">
+                "Загрузка..."
+            </div>
+            <div class="qoute__author">Загрузка...</div>
+        </div>
+    `;
       return this.el;
     }
 

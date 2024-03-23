@@ -8,6 +8,7 @@ import { Quote } from '../../components/quote/quote';
 export class MainView extends AbstractView {
   state = {
     loading: false,
+    userLocation: {},
     weatherData: {},
     qouteData: {},
   };
@@ -22,31 +23,39 @@ export class MainView extends AbstractView {
 
   stateHook(path) {
     if (path === 'loading') {
-      console.log('loading');
       this.render();
     }
 
     if (path === 'qouteData') {
-      console.log('qouteData');
       this.render();
     }
 
     if (path === 'weatherData') {
-      console.log('weatherData');
       this.render();
     }
   }
 
   async loadData() {
     this.state.loading = true;
-    this.state.weatherData = await this.getWeather();
+    await this.getUserLocation();
+    this.state.weatherData = await this.getWeather(this.state.userLocation);
     this.state.qouteData = await this.getQuote();
     this.state.loading = false;
   }
 
-  async getWeather() {
+  getUserLocation() {
+    return new Promise((resolve) => {
+      navigator.geolocation.getCurrentPosition((pos) => {
+        this.state.userLocation.lat = pos.coords.latitude;
+        this.state.userLocation.lon = pos.coords.longitude;
+        resolve();
+      });
+    });
+  }
+
+  async getWeather(userLocation) {
     const res = await fetch(
-      'https://api.openweathermap.org/data/2.5/weather?lat=55.751244&lon=37.618423&appid=c0e0da61e61c3bc140ec9d16d070ef83&lang=ru&units=metric'
+      `https://api.openweathermap.org/data/2.5/weather?lat=${userLocation.lat}&lon=${userLocation.lon}&appid=c0e0da61e61c3bc140ec9d16d070ef83&lang=ru&units=metric`
     );
     return res.json();
   }
